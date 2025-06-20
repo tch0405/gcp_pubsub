@@ -1,27 +1,25 @@
-📬 GCP Pub/Sub with Docker
-This project demonstrates how to use Google Cloud Pub/Sub inside a Docker container to send and receive messages using Python.
+# 📬 GCP Pub/Sub with Docker
 
-🐳 Build Docker Image
-Make sure you're in the project root directory (where your Dockerfile is located), then run:
+This project demonstrates how to use **Google Cloud Pub/Sub** inside a Docker container to **send and receive messages** using Python.
 
-bash
-Copy
-Edit
+---
+
+## 🐳 Build Docker Image
+
+Make sure you're in the project root directory (where your `Dockerfile` is), then run:
+
+```bash
 docker build -t pubsub-docker .
-▶️ Run Publisher (one-time)
+```
+
 To send a message to your Pub/Sub topic:
 
-bash
-Copy
-Edit
+```bash
 docker run --rm pubsub-docker
-This runs publisher.py (the default command set in the Dockerfile).
+```
 
-▶️ Run Subscriber (long-running)
-To start listening for incoming messages from a subscription:
+To listen for messages from a Pub/Sub subscription:
 
-bash
-Copy
-Edit
+```bash
 docker run --rm pubsub-docker python subscriber.py
-This will keep running until you stop it manually (e.g., with Ctrl+C).
+```
